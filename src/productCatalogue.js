@@ -33,6 +33,8 @@ class Catalogue {
       .filter((p) => p.quantityInStock <= p.reorderLevel)
       .map((p) => p.id);
     return result;
+  }
+  
   batchAddProducts(batch) {
     const productIDClash = batch.products.some(
       (product) => this.findProductById(product.id) !== undefined
